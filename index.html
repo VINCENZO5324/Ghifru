@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghifru - Fruits in Ghibli Style</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f3e6;
+            color: #5a4032;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #c2e0c2;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 2.8em;
+            color: #6b946b;
+            margin: 0;
+            font-family: 'Georgia', serif;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .fruit-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .fruit-card {
+            background-color: #fff5e1;
+            border: 2px dashed #d9c8a9;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+        }
+        .fruit-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            background-color: #e6e6e6; /* Placeholder */
+        }
+        h2 {
+            color: #8fb98f;
+            font-size: 1.4em;
+            margin: 10px 0;
+        }
+        p {
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        footer {
+            background-color: #c2e0c2;
+            padding: 15px;
+            margin-top: 30px;
+            color: #6b946b;
+        }
+        @media (max-width: 600px) {
+            .fruit-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ghifru</h1>
+        <p>A Ghibli-inspired fruit adventure</p>
+    </header>
+
+    <div class="container">
+        <div class="fruit-list" id="fruitList"></div>
+    </div>
+
+    <footer>
+        <p>© 2025 Ghifru - Crafted with Ghibli Whimsy</p>
+    </footer>
+
+    <script>
+        const fruits = [
+            { name: "Apple", info: "A crisp delight, perfect for a forest picnic with Totoro." },
+            { name: "Banana", info: "Curved and golden, like a bridge in a Ghibli valley." },
+            { name: "Cherry", info: "Tiny red gems that sparkle in a spirit’s garden." },
+            { name: "Dragon Fruit", info: "A mystical fruit with scales, fit for a Ghibli dragon." },
+            { name: "Elderberry", info: "Dark and wise, growing near an ancient Ghibli tree." },
+            { name: "Fig", info: "Soft and sweet, hidden in a magical orchard." },
+            { name: "Grape", info: "Clusters of joy, dangling from a whimsical vine." },
+            { name: "Kiwi", info: "Fuzzy and green, a treasure from a Ghibli jungle." },
+            { name: "Lychee", info: "A juicy pearl, glowing in a moonlit Ghibli scene." },
+            { name: "Mango", info: "Golden and lush, ripe under a Ghibli sun." },
+            // Placeholder for 90 more fruits
+            ...Array(90).fill().map((_, i) => ({
+                name: `Fruit ${i + 11}`,
+                info: "A mysterious fruit awaiting its Ghibli tale."
+            }))
+        ];
+
+        const fruitList = document.getElementById("fruitList");
+        fruits.forEach(fruit => {
+            const card = document.createElement("div");
+            card.className = "fruit-card";
+            card.innerHTML = `
+                <img src="#" alt="${fruit.name} Placeholder">
+                <h2>${fruit.name}</h2>
+                <p>${fruit.info}</p>
+            `;
+            fruitList.appendChild(card);
+        });
+    </script>
+</body>
+</html>
